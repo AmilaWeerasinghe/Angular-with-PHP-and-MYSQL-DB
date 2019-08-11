@@ -1,0 +1,32 @@
+<h1>Smart Attendance Marking System</h1>
+<div>
+  <h2>Student Portal</h2>
+  <table border='1' width='100%' style='border-collapse: collapse;'>
+    <tr>
+      <th>Student ID</th>
+      <th>Subject Code</th>
+      <th>Attended days</th>
+      <th>Operations</th>
+
+    </tr>
+
+    <tr *ngFor="let policy of policies">
+      <td>{{ policy.id }}</td>
+      <td>{{ policy.number }}</td>
+      <td>{{ policy.amount }}</td>
+      <td>
+
+      </td>
+    </tr>
+  </table>
+
+  <br>
+  <form #f="ngForm">
+    <label>Number</label>
+    <input type="text" name="number" [(ngModel)]="selectedPolicy.number">
+    <br>
+    <label>Amount</label>
+    <input type="text" name="amount" [(ngModel)]="selectedPolicy.amount">
+    <br>
+    <input type="button" (click)="createOrUpdatePolicy(f)" value="Create or Update Policy">
+  </form>
